@@ -1,0 +1,15 @@
+{
+  "name": "iptolocation-node",
+  "version": "1.0.0",
+  "description": "IPtoLocation NodeJS Backend",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "@dmrmuhammed/iptolocation"
+  },
+  "author": "Muhammed Demir",
+  "license": "MIT"
+}
