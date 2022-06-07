@@ -1,21 +1,36 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
   previewFeatures = ["referentialIntegrity"]
 }
 
 datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
+  provider             = "mysql"
+  url                  = env("DATABASE_URL")
   referentialIntegrity = "prisma"
 }
 
 model Number {
-  id        Int      @id @default(autoincrement())
-  from Decimal @db.Decimal(11,0) @default(0)
-  to Decimal @db.Decimal(11,0) @default(0)
-  code String @db.Char(2)
-  name String @db.VarChar(64)
+  id                 Int     @id @default(autoincrement())
+  from               Decimal @default(0) @db.Decimal(10, 0)
+  to                 Decimal @default(0) @db.Decimal(10, 0)
+  countryCode        String  @db.Char(2)
+  countryName        String  @db.VarChar(64)
+  region             String  @db.VarChar(128)
+  city               String  @db.VarChar(128)
+  latitude           Float
+  longitude          Float
+  zipCode            String  @db.Char(30)
+  timeZone           String  @db.VarChar(7)
+  ispName            String  @db.VarChar(256)
+  domainName         String  @db.VarChar(128)
+  netSpeed           String  @db.VarChar(10)
+  iddCode            String  @db.VarChar(5)
+  areaCode           String  @db.VarChar(30)
+  weatherStationCode String  @db.VarChar(10)
+  weatherStationName String  @db.VarChar(128)
+  mcc                String  @db.VarChar(256)
+  mnc                String  @db.VarChar(256)
+  mobileBrand        String  @db.VarChar(128)
+  elevation          Int
+  usageType          String  @db.VarChar(11)
 }
